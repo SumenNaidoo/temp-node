@@ -1,0 +1,30 @@
+const fs = require('fs');
+
+const first = fs.readFileSync('c:\\Users\\user-pc\\Desktop\\node\\content\\first.txt', 'utf8');
+const second = fs.readFileSync('c:\\Users\\user-pc\\Desktop\\node\\content\\second.txt', 'utf8');
+//   \content\subfolder\test.txt
+console.log(first, second)
+fs.writeFileSync(   'c:\\Users\\user-pc\\Desktop\\node\\content\\third.txt', 
+                    `Here is the result: ${first}, ${second}`,
+                    {flag: 'a' }
+                    );
+
+
+                    const fs = require('fs');
+
+fs.readFile('c:\\Users\\user-pc\\Desktop\\node\\content\\first.txt','utf8',(err, result)=>{
+    if(err){
+        console.log(err)
+        return
+    }
+    const first = result
+    fs.readFile('c:\\Users\\user-pc\\Desktop\\node\\content\\second.txt','utf8',(err, result)=>{
+        if(err){
+            console.log(err)
+            return
+        }
+        const second = result
+        fs.writeFile('c:\\Users\\user-pc\\Desktop\\node\\content\\third.txt', 
+        `Here is the result: ${first}, ${second}`)
+    })
+  })

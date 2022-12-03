@@ -1,0 +1,9 @@
+const names = require('./first module')
+const sayHi = require('./second module')
+const data = require('./alernative')
+console.log(data)
+
+
+sayHi('Sumen')
+sayHi(names.john)
+sayHi(names.peter)
